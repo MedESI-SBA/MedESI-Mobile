@@ -43,4 +43,10 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="title_activity_login">Login</string>
+    <string name="hey_there"><u>Hey there,</u></string>
+    <string name="welcome_back"><u>Welcome Back!</u></string>
+    <string name="email">📧   <u>Email</u></string>
+    <string name="password">🔒   <u>Password</u></string>
+    <string name="forgot_your_password"><u>Forgot your password?</u></string>
+    <string name="don_t_have_an_account_yet_contact_us"><u>Don’t have an account yet? Contact Us</u></string>
 </resources>

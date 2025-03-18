@@ -2,6 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MedESI" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your light theme here. -->
+        <item name="fontFamily">@font/montserrat</item>
+        <item name="android:textStyle">bold</item>
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 

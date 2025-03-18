@@ -3,5 +3,6 @@
     <style name="Base.Theme.MedESI" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="fontFamily">@font/montserrat</item>
     </style>
 </resources>

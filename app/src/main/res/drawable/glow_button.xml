@@ -1,0 +1,18 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Glow Effect -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#33FFFFFF" /> <!-- Translucent white glow -->
+            <corners android:radius="50dp"/> <!-- Adjust for rounded corners -->
+            <padding android:left="10dp" android:top="10dp" android:right="10dp" android:bottom="10dp"/>
+        </shape>
+    </item>
+
+    <!-- Main Button -->
+    <item android:left="5dp" android:top="5dp" android:right="5dp" android:bottom="5dp">
+        <shape android:shape="rectangle">
+            <solid android:color="#FF6200EE" /> <!-- Your button color -->
+            <corners android:radius="50dp"/>
+        </shape>
+    </item>
+</layer-list>
