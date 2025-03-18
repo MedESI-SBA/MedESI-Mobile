@@ -49,4 +49,7 @@
     <string name="password">🔒   <u>Password</u></string>
     <string name="forgot_your_password"><u>Forgot your password?</u></string>
     <string name="don_t_have_an_account_yet_contact_us"><u>Don’t have an account yet? Contact Us</u></string>
+    <string name="reset_your_password">Reset Your Password</string>
+    <string name="login">Login</string>
+    <string name="reset_your_passwordd">RESET YOUR PASSWORD</string>
 </resources>

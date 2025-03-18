@@ -1,6 +1,7 @@
 package com.sahtech.medesi
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Color
 import android.os.Bundle
@@ -59,10 +60,14 @@ class Login : AppCompatActivity() {
             val password = binding.passwordEditText.text.toString()
             loginUser(email, password)
         }
+
+        binding.forgotPasswordContainer.setOnClickListener{
+            startActivity(Intent(this,RestPassword::class.java))
+        }
     }
 
     private fun loginUser(email: String, password: String) {
-        val url = "https://backend/api/login"
+        val url = "https://medesi.loca.lt/api/login"
         val jsonBody = JSONObject().apply {
             put("email", email)
             put("password", password)
