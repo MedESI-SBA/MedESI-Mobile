@@ -22,6 +22,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
 import okhttp3.Response
+import org.json.JSONException
 import org.json.JSONObject
 import java.io.IOException
 
@@ -88,21 +89,28 @@ class Login : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call, response: Response) {
-                response.body?.string()?.let { responseBody ->
-                    val jsonResponse = JSONObject(responseBody)
-                    if (response.isSuccessful) {
-                        val token = jsonResponse.getString("token")
-                        saveToken(token)
-                        runOnUiThread {
-                            Toast.makeText(this@Login, "Login successful", Toast.LENGTH_SHORT).show()
+                if (response.isSuccessful) {
+                    response.body?.string()?.let { responseBody ->
+                        try {
+                            val jsonResponse = JSONObject(responseBody)
+                            val token = jsonResponse.getString("token")
+                            saveToken(token)
+                            runOnUiThread {
+                                Toast.makeText(this@Login, "Login successful", Toast.LENGTH_SHORT).show()
+                            }
+                        } catch (e: JSONException) {
+                            runOnUiThread {
+                                Toast.makeText(this@Login, "Error parsing response: ${e.message}", Toast.LENGTH_SHORT).show()
+                            }
                         }
-                    } else {
-                        runOnUiThread {
-                            Toast.makeText(this@Login, "Login failed: ${jsonResponse.getString("message")}", Toast.LENGTH_SHORT).show()
-                        }
+                    }
+                } else {
+                    runOnUiThread {
+                        Toast.makeText(this@Login, "Login failed: ${response.code}", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
+
         })
     }
 
