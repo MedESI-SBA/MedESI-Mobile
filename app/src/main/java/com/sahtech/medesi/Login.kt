@@ -95,6 +95,7 @@ class Login : AppCompatActivity() {
                             val jsonResponse = JSONObject(responseBody)
                             val token = jsonResponse.getString("token")
                             saveToken(token)
+                            startActivity(Intent(this@Login, Home::class.java))
                             runOnUiThread {
                                 Toast.makeText(this@Login, "Login successful", Toast.LENGTH_SHORT).show()
                             }
