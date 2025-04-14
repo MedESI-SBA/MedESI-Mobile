@@ -52,4 +52,7 @@
     <string name="reset_your_password">Reset Your Password</string>
     <string name="login">Login</string>
     <string name="reset_your_passwordd">RESET YOUR PASSWORD</string>
+    <string name="title_activity_profile">Profile</string>
+    <string name="title_activity_home">Home</string>
+    <string name="title_activity_main">Main</string>
 </resources>

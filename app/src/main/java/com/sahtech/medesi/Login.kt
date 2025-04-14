@@ -10,6 +10,7 @@ import android.text.SpannableString
 import android.text.Spanned
 import android.text.style.ClickableSpan
 import android.text.style.ForegroundColorSpan
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -72,7 +73,7 @@ class Login : AppCompatActivity() {
         val jsonBody = JSONObject().apply {
             put("email", email)
             put("password", password)
-            put("user_type", "student")
+            put("user_type", "patient")
         }
 
         val requestBody = RequestBody.create("application/json; charset=utf-8".toMediaTypeOrNull(), jsonBody.toString())
@@ -95,7 +96,7 @@ class Login : AppCompatActivity() {
                             val jsonResponse = JSONObject(responseBody)
                             val token = jsonResponse.getString("token")
                             saveToken(token)
-                            startActivity(Intent(this@Login, Home::class.java))
+                            startActivity(Intent(this@Login, Main::class.java))
                             runOnUiThread {
                                 Toast.makeText(this@Login, "Login successful", Toast.LENGTH_SHORT).show()
                             }
@@ -117,5 +118,6 @@ class Login : AppCompatActivity() {
 
     private fun saveToken(token: String) {
         sharedPreferences.edit().putString("auth_token", token).apply()
+        Log.d("auth_token", token)
     }
 }

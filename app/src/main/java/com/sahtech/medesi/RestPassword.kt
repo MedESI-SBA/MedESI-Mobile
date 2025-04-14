@@ -62,7 +62,7 @@ class RestPassword : AppCompatActivity() {
                     val jsonResponse = JSONObject(responseBody)
                     if (response.isSuccessful) {
                         runOnUiThread {
-                            Toast.makeText(this@RestPassword, "Reset successful", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this@RestPassword, "Password Reset Link sent successfully", Toast.LENGTH_SHORT).show()
 
                             Handler().postDelayed({
                                 startActivity(Intent(this@RestPassword, Login::class.java))
